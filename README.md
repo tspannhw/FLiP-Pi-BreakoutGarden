@@ -3,7 +3,7 @@
 
 ### Gear / Hardware
 
-* Raspberry Pi 4, Bullseye Raspian, armv71
+* Raspberry Pi 3 Model B Rev 1.2, Bullseye Raspian, armv71
 * Pimoroni Breakout Garden Hat
 * 1.12" Mono OLED Breakout 128x128 White/Black Screen
 * BME680 Air Quality, Temperature, Pressure, Humidity Sensor
