@@ -18,7 +18,7 @@
 * Pulsar Python Client 2.10 (avro) pip3 install pulsar-client[avro]
 * Python Breakout Garden
 * Python PSUTIL https://pypi.org/project/psutil/
-
+* Python LUMA OLED pip3 install --upgrade luma.oled
 
 ### References
 
