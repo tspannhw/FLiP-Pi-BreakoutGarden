@@ -34,3 +34,4 @@
 * https://github.com/pimoroni/lsm303d-python
 * https://github.com/rm-hull/luma.oled
 * https://luma-oled.readthedocs.io/en/latest/install.html
+* https://github.com/streamnative/examples/blob/master/cloud/python/OAuth2Consumer.py
