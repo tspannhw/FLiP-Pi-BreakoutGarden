@@ -1,0 +1,1 @@
+python3 /opt/demo/consumer.py -su pulsar+ssl://sn-academy.sndevadvocate.snio.cloud:6651 -t persistent://public/default/pi-sensors --auth-params '{"issuer_url":"https://auth.streamnative.cloud", "private_key":"sndevadvocate-tspann.json", "audience":"urn:sn:pulsar:sndevadvocate:my-instance"}' 
