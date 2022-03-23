@@ -211,6 +211,8 @@ val pQuery = dfPulsar.selectExpr("CAST(__key AS STRING)",
             .option("checkpointLocation", "/tmp/checkpoint")
             .start()
 
+## You could do csv, parquet, json
+
 pQuery.explain()
 pQuery.awaitTermination()
 pQuery.stop()
