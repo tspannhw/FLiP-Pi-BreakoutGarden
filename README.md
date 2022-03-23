@@ -30,6 +30,20 @@ bin/pulsar-admin topics create "persistent://public/default/pi-sensors"
 
 ````
 
+### Device Running
+
+````
+VL53L0X_GetDeviceInfo:
+Device Name : VL53L1 cut1.1
+Device Type : VL53L1
+Device ID : 
+ProductRevisionMajor : 1
+ProductRevisionMinor : 15
+{'_required_default': False, '_default': None, '_required': False, 'uuid': 'snr_20220323200032', 'ipaddress': '192.168.1.229', 'cputempf': 99, 'runtime': 154, 'host': 'piups', 'hostname': 'piups', 'macaddress': 'b8:27:eb:4a:4b:61', 'endtime': '1648065632.645613', 'te': '154.00473523139954', 'cpu': 0.0, 'diskusage': '3895.3 MB', 'memory': 21.5, 'rowid': '20220323200032_6a66f9ea-1273-4e5d-b150-9300f6272482', 'systemtime': '03/23/2022 16:00:33', 'ts': 1648065633, 'starttime': '03/23/2022 15:57:58', 'BH1745_red': 112.2, 'BH1745_green': 82.0, 'BH1745_blue': 63.0, 'BH1745_clear': 110.0, 'VL53L1X_distance_in_mm': -1185.0, 'ltr559_lux': 6.65, 'ltr559_prox': 0.0, 'bme680_tempc': 23.6, 'bme680_tempf': 74.48, 'bme680_pressure': 1017.48, 'bme680_humidity': 33.931, 'lsm303d_accelerometer': '-00.08g : -01.00g : +00.01g', 'lsm303d_magnetometer': '+00.06 : +00.30 : +00.07'}
+VL53L1X Start Ranging Address 0x29
+
+````
+
 ### Consumer
 
 ````
@@ -125,8 +139,49 @@ Query 20220323_184946_00003_p66fs, FINISHED, 1 node
 
 ````
 val dfPulsar = spark.readStream.format("pulsar").option("service.url", "pulsar://pulsar1:6650").option("admin.url", "http://pulsar1:8080").option("topic", "persistent://public/default/pi-sensors").load()
-dfPulsar.printSchema()
-val pQuery = dfPulsar.selectExpr("*").writeStream.format("csv").option("truncate", false) .option("checkpointLocation", "/tmp/checkpoint").option("path", "/opt/demo/pisensors").start()
+
+scala> dfPulsar.printSchema()
+root
+ |-- uuid: string (nullable = true)
+ |-- ipaddress: string (nullable = true)
+ |-- cputempf: integer (nullable = true)
+ |-- runtime: integer (nullable = true)
+ |-- host: string (nullable = true)
+ |-- hostname: string (nullable = true)
+ |-- macaddress: string (nullable = true)
+ |-- endtime: string (nullable = true)
+ |-- te: string (nullable = true)
+ |-- cpu: float (nullable = true)
+ |-- diskusage: string (nullable = true)
+ |-- memory: float (nullable = true)
+ |-- rowid: string (nullable = true)
+ |-- systemtime: string (nullable = true)
+ |-- ts: integer (nullable = true)
+ |-- starttime: string (nullable = true)
+ |-- BH1745_red: float (nullable = true)
+ |-- BH1745_green: float (nullable = true)
+ |-- BH1745_blue: float (nullable = true)
+ |-- BH1745_clear: float (nullable = true)
+ |-- VL53L1X_distance_in_mm: float (nullable = true)
+ |-- ltr559_lux: float (nullable = true)
+ |-- ltr559_prox: float (nullable = true)
+ |-- bme680_tempc: float (nullable = true)
+ |-- bme680_tempf: float (nullable = true)
+ |-- bme680_pressure: float (nullable = true)
+ |-- bme680_humidity: float (nullable = true)
+ |-- lsm303d_accelerometer: string (nullable = true)
+ |-- lsm303d_magnetometer: string (nullable = true)
+ |-- __key: binary (nullable = true)
+ |-- __topic: string (nullable = true)
+ |-- __messageId: binary (nullable = true)
+ |-- __publishTime: timestamp (nullable = true)
+ |-- __eventTime: timestamp (nullable = true)
+ |-- __messageProperties: map (nullable = true)
+ |    |-- key: string
+ |    |-- value: string (valueContainsNull = true)
+
+
+val pQuery = dfPulsar.selectExpr("*").writeStream.format("json").option("truncate", false).option("checkpointLocation", "/tmp/checkpoint").option("path", "/opt/demo/pisensors").start()
     
 pQuery.explain()
 pQuery.awaitTermination()
@@ -140,7 +195,7 @@ pQuery.stop()
 #### Flink SQL
 
 ````
-REATE CATALOG pulsar WITH (
+CREATE CATALOG pulsar WITH (
    'type' = 'pulsar',
    'service-url' = 'pulsar://pulsar1:6650',
    'admin-url' = 'http://pulsar1:8080',
@@ -151,7 +206,48 @@ USE CATALOG pulsar;
 
 SHOW TABLES;
 
-Flink SQL> describe garden3;
+
+describe `pi-sensors`;
+> 
++------------------------+--------+------+-----+--------+-----------+
+|                   name |   type | null | key | extras | watermark |
++------------------------+--------+------+-----+--------+-----------+
+|                   uuid | STRING | true |     |        |           |
+|              ipaddress | STRING | true |     |        |           |
+|               cputempf |    INT | true |     |        |           |
+|                runtime |    INT | true |     |        |           |
+|                   host | STRING | true |     |        |           |
+|               hostname | STRING | true |     |        |           |
+|             macaddress | STRING | true |     |        |           |
+|                endtime | STRING | true |     |        |           |
+|                     te | STRING | true |     |        |           |
+|                    cpu |  FLOAT | true |     |        |           |
+|              diskusage | STRING | true |     |        |           |
+|                 memory |  FLOAT | true |     |        |           |
+|                  rowid | STRING | true |     |        |           |
+|             systemtime | STRING | true |     |        |           |
+|                     ts |    INT | true |     |        |           |
+|              starttime | STRING | true |     |        |           |
+|             BH1745_red |  FLOAT | true |     |        |           |
+|           BH1745_green |  FLOAT | true |     |        |           |
+|            BH1745_blue |  FLOAT | true |     |        |           |
+|           BH1745_clear |  FLOAT | true |     |        |           |
+| VL53L1X_distance_in_mm |  FLOAT | true |     |        |           |
+|             ltr559_lux |  FLOAT | true |     |        |           |
+|            ltr559_prox |  FLOAT | true |     |        |           |
+|           bme680_tempc |  FLOAT | true |     |        |           |
+|           bme680_tempf |  FLOAT | true |     |        |           |
+|        bme680_pressure |  FLOAT | true |     |        |           |
+|        bme680_humidity |  FLOAT | true |     |        |           |
+|  lsm303d_accelerometer | STRING | true |     |        |           |
+|   lsm303d_magnetometer | STRING | true |     |        |           |
++------------------------+--------+------+-----+--------+-----------+
+
+select max(bme680_pressure) as maxpressure, max(bme680_tempf) as maxtemp, max(ltr559_lux) as maxlux, avg(BH1745_red) as avgred,
+       max(VL53L1X_distance_in_mm) as maxdistance
+from `pi-sensors`
+
+select * from `pi-sensors`;
 
 ````
 
