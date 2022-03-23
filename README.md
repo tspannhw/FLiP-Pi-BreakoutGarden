@@ -297,6 +297,40 @@ show collections
 
 db.pisensors.find().pretty()
 
+db.pisensors.find().pretty()
+{
+        "_id" : ObjectId("623b812e5dae8913d42a93ee"),
+        "uuid" : "snr_20220323194514",
+        "ipaddress" : "192.168.1.229",
+        "cputempf" : 100,
+        "runtime" : 9,
+        "host" : "piups",
+        "hostname" : "piups",
+        "macaddress" : "b8:27:eb:4a:4b:61",
+        "endtime" : "1648064714.7820184",
+        "te" : "9.371636629104614",
+        "cpu" : 6.5,
+        "diskusage" : "3895.4 MB",
+        "memory" : 21.4,
+        "rowid" : "20220323194514_c9ec900f-05c2-49c4-985f-ddd83e8b15c0",
+        "systemtime" : "03/23/2022 15:45:15",
+        "ts" : 1648064715,
+        "starttime" : "03/23/2022 15:45:05",
+        "BH1745_red" : 112.2,
+        "BH1745_green" : 83,
+        "BH1745_blue" : 64.8,
+        "BH1745_clear" : 110,
+        "VL53L1X_distance_in_mm" : 31,
+        "ltr559_lux" : 6.65,
+        "ltr559_prox" : 0,
+        "bme680_tempc" : 23.47,
+        "bme680_tempf" : 74.25,
+        "bme680_pressure" : 1017.71,
+        "bme680_humidity" : 34.432,
+        "lsm303d_accelerometer" : "-00.08g : -01.01g : +00.01g",
+        "lsm303d_magnetometer" : "+00.06 : +00.30 : +00.07"
+}
+
 ````
 
 ### References
