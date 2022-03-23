@@ -1,4 +1,5 @@
 # FLiP-Pi-BreakoutGarden
+
 ## FLiP-Py
 
 
@@ -21,6 +22,14 @@
 * Python PSUTIL https://pypi.org/project/psutil/
 * Python LUMA OLED pip3 install --upgrade luma.oled
 * Libraries sudo apt-get install python3 python3-pip python3-pil libjpeg-dev zlib1g-dev libfreetype6-dev liblcms2-dev libopenjp2-7 libtiff5 -y
+
+### Consumer
+
+````
+
+bin/pulsar-client consume "persistent://public/default/pi-sensors" -s "pisnsrgrdnrdr" -n 0
+
+````
 
 ### References
 
