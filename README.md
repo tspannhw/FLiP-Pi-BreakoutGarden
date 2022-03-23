@@ -181,8 +181,36 @@ root
  |    |-- value: string (valueContainsNull = true)
 
 
-val pQuery = dfPulsar.selectExpr("*").writeStream.format("json").option("truncate", false).option("checkpointLocation", "/tmp/checkpoint").option("path", "/opt/demo/pisensors").start()
-    
+## Example Queries
+
+val pQuery = dfPulsar.selectExpr("*").writeStream.format("console").option("truncate", false).start()
+
+val pQuery = dfPulsar.selectExpr("CAST(__key AS STRING)", 
+                                 "CAST(uuid AS STRING)",
+                                 "CAST(ipaddress AS STRING)",
+                                 "CAST(cputempf AS STRING)",
+                                 "CAST(host AS STRING)",
+                                 "CAST(cpu AS STRING)",
+                                 "CAST(diskusage AS STRING)",
+                                 "CAST(memory AS STRING)",
+                                 "CAST(systemtime AS STRING)",
+                                 "CAST(BH1745_red AS STRING)",
+                                 "CAST(BH1745_green AS STRING)",
+                                 "CAST(BH1745_blue AS STRING)",
+                                 "CAST(BH1745_clear AS STRING)",
+                                 "CAST(VL53L1X_distance_in_mm AS STRING)",
+                                 "CAST(ltr559_lux AS STRING)",                                 
+                                 "CAST(bme680_tempf AS STRING)",
+                                 "CAST(bme680_pressure AS STRING)",
+                                 "CAST(bme680_humidity AS STRING)")
+                                 .as[(String, String, String, String, String, String, String, String,
+                                 String, String, String, String, String, String, String, String, String, String)]
+            .writeStream.format("csv")
+            .option("truncate", "false")
+            .option("path", "/opt/demo/pisensordata")
+            .option("checkpointLocation", "/tmp/checkpoint")
+            .start()
+
 pQuery.explain()
 pQuery.awaitTermination()
 pQuery.stop()
