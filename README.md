@@ -53,7 +53,7 @@ bin/pulsar-client consume "persistent://public/default/pi-sensors" -s "pisnsrgrd
 
 ````
 
-### SQL Consumers
+### ** SQL Consumers **
 
 #### Pulsar SQL / Presto/Trino
 
@@ -207,11 +207,12 @@ val pQuery = dfPulsar.selectExpr("CAST(__key AS STRING)",
                                  String, String, String, String, String, String, String, String, String, String)]
             .writeStream.format("csv")
             .option("truncate", "false")
+            .option("header", true)
             .option("path", "/opt/demo/pisensordata")
             .option("checkpointLocation", "/tmp/checkpoint")
             .start()
 
-## You could do csv, parquet, json
+## You could do csv, parquet, json, orc
 
 pQuery.explain()
 pQuery.awaitTermination()
