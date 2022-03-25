@@ -399,7 +399,7 @@ db.pisensors.find().pretty()
 
 ![GRAFANA](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana3.jpg)
 
-[!PULSARMAN](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pulsarman.jpg)
+![PULSARMAN](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pulsarman.jpg)
 
 
 ### References
