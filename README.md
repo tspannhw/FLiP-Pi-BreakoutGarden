@@ -145,8 +145,6 @@ Query 20220323_184946_00003_p66fs, FINISHED, 1 node
 
 ![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstable.jpg)
 
-![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstabletrino.jpg)
-
 ![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstrinoresults.jpg)
 
 ![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstrinotabledef.jpg)
