@@ -143,13 +143,13 @@ Query 20220323_184946_00003_p66fs, FINISHED, 1 node
 
 ![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorsprestotable.jpg)
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstable.jpg
+![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstable.jpg)
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstabletrino.jpg
+![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstabletrino.jpg)
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstrinoresults.jpg
+![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstrinoresults.jpg)
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstrinotabledef.jpg
+![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstrinotabledef.jpg)
 
 
 
@@ -241,12 +241,12 @@ pQuery.stop()
 
 ````
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkexecutors.jpg
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkjobs.jpg
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkquerydetails.jpg
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparksqltest.jpg
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkstage.jpg
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkstreamingquerystats.jpg
+![SPARK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkexecutors.jpg)
+![SPARK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkjobs.jpg)
+![SPARK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkquerydetails.jpg)
+![SPARK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparksqltest.jpg)
+![SPARK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkstage.jpg)
+![SPARK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkstreamingquerystats.jpg)
 
 
 #### Example Spark ETL CSV Output
@@ -258,9 +258,7 @@ snr_20220324215723,snr_20220324215723,192.168.1.229,95,piups,0.0,3887.5 MB,20.6,
 
 ````
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkcsvoutput.jpg
-
-
+![CSV](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkcsvoutput.jpg)
 
 
 #### Flink SQL
@@ -325,30 +323,28 @@ select * from `pi-sensors`;
 
 ![FLINK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinkrowsummary.jpg)
 ![FLINK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinksqlclienttop.jpg)
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinksqlcontinuous.jpg
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinksqlmax.jpg
+![FLINK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinksqlcontinuous.jpg)
+![FLINK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinksqlmax.jpg)
 
 
 ### Apache NiFi - Pulsar Consumer.   MongoDB Writer.
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nifigroup.jpg
+![NIFI](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nifigroup.jpg)
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nififlow.jpg
-
+![NIFI](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nififlow.jpg)
 
 ![NIFI](https://raw.githubusercontent.com/tspannhw/FLiP-Pi-BreakoutGarden/main/images/consumePulsarRecod.jpg)
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nifiqueryrecord.jpg
+![NIFI](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nifiqueryrecord.jpg)
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/putMongoRecord.jpg
+![NIFI](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/putMongoRecord.jpg)
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nifimongocontroller.jpg
+![NIFI](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nifimongocontroller.jpg)
+
 
 ### Data Store - MongoDB
 
 ````
-mongodb://pulsar1:27017
-
 
 mongo -u debezium -p dbz --authenticationDatabase admin pulsar1:27017/inventory
 
@@ -396,17 +392,18 @@ db.pisensors.find().pretty()
 
 ````
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/mongoprettydata.jpg
+![MongoData](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/mongoprettydata.jpg)
 
 
 ### Monitor Everything!   Let me see what's going on!?!??!
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana.jpg
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana2.jpg
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana3.jpg
+![GRAFANA](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana.jpg)
 
-https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pulsarman.jpg
+![GRAFANA](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana2.jpg)
 
+![GRAFANA](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana3.jpg)
+
+[!PULSARMAN](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pulsarman.jpg)
 
 
 ### References
