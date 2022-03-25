@@ -3,6 +3,7 @@
 ## FLiP-Py
 
 
+
 ### Gear / Hardware
 
 * Raspberry Pi 3 Model B Rev 1.2, Bullseye Raspian, armv71
@@ -13,6 +14,8 @@
 * BH1745 Luminance and Color Sensor
 * LTR-559 Light and Proximity Sensor 0.01 lux to 64,000 lux
 * VL53L1X Time of Flight (TOF) Sensor
+
+![Device](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorsboard.jpg)
 
 ### Software / Libraries
 
@@ -137,6 +140,20 @@ presto> select * from pulsar."public/default"."pi-sensors";
 Query 20220323_184946_00003_p66fs, FINISHED, 1 node
 
 ````
+
+![PULSARSQL](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorsprestotable.jpg)
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstable.jpg
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstabletrino.jpg
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstrinoresults.jpg
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pisensorstrinotabledef.jpg
+
+
+
+
 #### Spark SQL
 
 ````
@@ -222,8 +239,15 @@ pQuery.stop()
 
 // can be "orc", "json", "csv", etc.
 
-
 ````
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkexecutors.jpg
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkjobs.jpg
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkquerydetails.jpg
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparksqltest.jpg
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkstage.jpg
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkstreamingquerystats.jpg
+
 
 #### Example Spark ETL CSV Output
 
@@ -233,6 +257,11 @@ __key,uuid,ipaddress,cputempf,host,cpu,diskusage,memory,systemtime,BH1745_red,BH
 snr_20220324215723,snr_20220324215723,192.168.1.229,95,piups,0.0,3887.5 MB,20.6,03/24/2022 17:57:24,134.2,99.0,75.6,130.0,15.0,6.09,70.66,1006.11,44.737
 
 ````
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/sparkcsvoutput.jpg
+
+
+
 
 #### Flink SQL
 
@@ -293,6 +322,28 @@ select * from `pi-sensors`;
 
 ````
 
+
+![FLINK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinkrowsummary.jpg)
+![FLINK](https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinksqlclienttop.jpg)
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinksqlcontinuous.jpg
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/flinksqlmax.jpg
+
+
+### Apache NiFi - Pulsar Consumer.   MongoDB Writer.
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nifigroup.jpg
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nififlow.jpg
+
+
+![NIFI](https://raw.githubusercontent.com/tspannhw/FLiP-Pi-BreakoutGarden/main/images/consumePulsarRecod.jpg)
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nifiqueryrecord.jpg
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/putMongoRecord.jpg
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/nifimongocontroller.jpg
+
 ### Data Store - MongoDB
 
 ````
@@ -345,8 +396,22 @@ db.pisensors.find().pretty()
 
 ````
 
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/mongoprettydata.jpg
+
+
+### Monitor Everything!   Let me see what's going on!?!??!
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana.jpg
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana2.jpg
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/grafana3.jpg
+
+https://github.com/tspannhw/FLiP-Pi-BreakoutGarden/blob/main/images/pulsarman.jpg
+
+
+
 ### References
 
+* https://www.academy.streamnative.io/
 * https://github.com/tspannhw/PulsarOnRaspberryPi
 * https://community.cloudera.com/t5/Community-Articles/IoT-Series-Sensors-Utilizing-Breakout-Garden-Hat-Part-1/ta-p/249262
 * https://shop.pimoroni.com/products/breakout-garden-hat?variant=12767628787795
@@ -360,5 +425,3 @@ db.pisensors.find().pretty()
 * https://luma-oled.readthedocs.io/en/latest/install.html
 * https://github.com/streamnative/examples/blob/master/cloud/python/OAuth2Consumer.py
 * https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-sinks
-
-
